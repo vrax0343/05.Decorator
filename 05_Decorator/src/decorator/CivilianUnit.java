@@ -13,4 +13,10 @@ public class CivilianUnit extends NormalUnit {
 		movement = new Walk();
 		weapon = new Fist();
 	}
+	public void attack(){ 
+		System.out.println("노말 공격");
+	}
+	public void move(){
+		System.out.println("노말 이동");
+	}
 }

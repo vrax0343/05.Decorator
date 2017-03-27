@@ -13,4 +13,10 @@ public class KnightUnit extends NormalUnit {
 		movement = new Walk();
 		weapon = new Sword();
 	}
+	public void attack(){ 
+		System.out.println("노말 공격");
+	}
+	public void move(int x, int y){
+		System.out.println("노말 이동");
+	}
 }

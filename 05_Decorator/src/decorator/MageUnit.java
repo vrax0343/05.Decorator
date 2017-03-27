@@ -13,4 +13,10 @@ public class MageUnit extends NormalUnit {
 		movement = new Teleport();
 		weapon = new Staff();
 	}
+	public void attack(){ 
+		System.out.println("노말 공격");
+	}
+	public void move(){
+		System.out.println("노말 이동");
+	}
 }

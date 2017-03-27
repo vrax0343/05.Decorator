@@ -4,11 +4,13 @@ import behavior.attack.AttackBehavior;
 import behavior.movement.MovementBehavior;
 import behavior.weapon.WeaponBehavior;
 import decorator.function.Fight;
+import function.GenerateRandomPosition;
 
 public abstract class NormalUnit {
 	public String description = "Unknown Unit";
-	public int health,locationX,locationY=0;
+	public int health=0;
 	public String type="";
+	public int locationX,locationY= GenerateRandomPosition.generate();
 	
 	public AttackBehavior attack = null;
 	public MovementBehavior movement = null;
@@ -20,14 +22,28 @@ public abstract class NormalUnit {
 		return description;
 	}
 	
-	public void attack(){
-		new Fight().fightOnce(this);
-		System.out.println("hi");
+	
+
+	public AttackBehavior getAttack() {
+		return attack;
+	}
+
+	public void setAttack(AttackBehavior attack) {
+		this.attack = attack;
+	}
+
+	public MovementBehavior getMovement() {
+		return movement;
+	}
+
+	public void setMovement(MovementBehavior movement) {
+		this.movement = movement;
 	}
 	
-	public void move(int x, int y){
-		
-	}
+	public abstract void attack();
+	public abstract void move(int x, int y);
+
+
 
  
 
