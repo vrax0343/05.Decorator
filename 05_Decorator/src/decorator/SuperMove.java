@@ -1,39 +1,27 @@
 package decorator;
 
-import decorator.function.Fight;
 import decorator.function.Move;
+import factory.af.unit.TeamUnit;
 
 public class SuperMove extends AbilityDecorator {
-	public SuperMove(NormalUnit unit){
-		this.normalUnit=unit;
-		description = "Im Super Move";
+	TeamUnit teamUnit;
+	public SuperMove(TeamUnit unit){
+		this.teamUnit=unit;
+		System.out.println(teamUnit.teamName +" "+teamUnit.getName() + "이(가) 각성 이동을 했습니다");
 	}
 	
 	
 	
-	public void move(NormalUnit normalUnit, int locX, int locY){
-		System.out.println("("+locX+","+locY+")"+"으로 각성 이동을 합니다.");
-		System.out.println("현재 체력은: "+this.normalUnit.health);
-		System.out.println("현재 위치는: ("+normalUnit.locationX+","+normalUnit.locationY+")");
-		
-		System.out.println("-----------------------------");
-		this.normalUnit=new Move().moveSuperMove(normalUnit, locX, locY);
-		System.out.println("-----------------------------");
-		System.out.println("이동 후 체력은: "+normalUnit.health);
-		System.out.println("이동 후 위치는: ("+normalUnit.locationX+","+normalUnit.locationY+")");
-		
-//		unit.attack(unit);
-	}
 	public void move(int locX, int locY){
 		System.out.println("("+locX+","+locY+")"+"으로 각성 이동을 합니다.");
-		System.out.println("현재 체력은: "+normalUnit.health);
-		System.out.println("현재 위치는: ("+normalUnit.locationX+","+normalUnit.locationY+")");
+		System.out.println("현재 체력은: "+teamUnit.getHealth());
+		System.out.println("현재 위치는: ("+teamUnit.locationX+","+teamUnit.locationY+")");
 		
 		System.out.println("-----------------------------");
-		normalUnit=new Move().moveSuperMove(normalUnit, locX, locY);
+		teamUnit=new Move().moveSuperMove(teamUnit, locX, locY);
 		System.out.println("-----------------------------");
-		System.out.println("이동 후 체력은: "+normalUnit.health);
-		System.out.println("이동 후 위치는: ("+normalUnit.locationX+","+normalUnit.locationY+")");
+		System.out.println("이동 후 체력은: "+teamUnit.getHealth());
+		System.out.println("이동 후 위치는: ("+teamUnit.locationX+","+teamUnit.locationY+")");
 		
 //		unit.attack(unit);
 	}
@@ -46,12 +34,16 @@ public class SuperMove extends AbilityDecorator {
 		return null;
 	}
 
-
-
 	@Override
-	public void attack() {
+	public void prepare() {
 		// TODO Auto-generated method stub
-		normalUnit.attack();
+		
+	}
+	@Override
+	public TeamUnit attack() {
+		// TODO Auto-generated method stub
+		teamUnit.attack();
+		return teamUnit;
 	}
 
 

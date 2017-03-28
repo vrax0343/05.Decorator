@@ -2,6 +2,6 @@ package factory.af;
 
 public class RedTeamName implements TeamName {
 	public String toString() {
-		return "Red Team Name";
+		return "Red Team";
 	}
 }

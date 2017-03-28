@@ -1,7 +1,6 @@
 package function;
 
 import check.MapLimitCheck;
-import decorator.NormalUnit;
 import unit.Unit;
 
 public class Move {

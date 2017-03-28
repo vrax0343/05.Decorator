@@ -1,15 +1,17 @@
 package decorator;
 
-public abstract class AbilityDecorator extends NormalUnit {
-	public NormalUnit normalUnit;
+import factory.af.unit.TeamUnit;
+
+public abstract class AbilityDecorator extends TeamUnit {
+	public TeamUnit teamUnit;
 	
 	public abstract String getDescription();
 	
-	public void setUnit(NormalUnit nu){
-		this.normalUnit = nu;
+	public void setUnit(TeamUnit nu){
+		this.teamUnit = nu;
 	}
 	
-	public NormalUnit getUnit(){
-		return normalUnit;
+	public TeamUnit getUnit(){
+		return teamUnit;
 	}
 }

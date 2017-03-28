@@ -1,9 +1,9 @@
 package decorator.function;
 
-import decorator.NormalUnit;
+import factory.af.unit.TeamUnit;
 
 public class Fight {
-	public void fightOnce(NormalUnit tempUnit){
+	public void fightOnce(TeamUnit tempUnit){
 		System.out.print(tempUnit.type + " \t");
 		
 		tempUnit.weapon.useWeapon(tempUnit.attack);
@@ -11,7 +11,7 @@ public class Fight {
 		System.out.println("hi");
 	}
 	
-	public NormalUnit fightSuperAttack(NormalUnit tempUnit){
+	public TeamUnit fightSuperAttack(TeamUnit tempUnit){
 		for(int i=0; i<2; i++){
 			if (tempUnit.health < 1){ }
 			else{

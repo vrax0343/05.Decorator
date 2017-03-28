@@ -4,7 +4,6 @@ import behavior.attack.AttackBehavior;
 import behavior.attack.Punch;
 import behavior.movement.Walk;
 import behavior.weapon.Fist;
-import unit.TeamUnit;
 
 public class BlueTeamCivilian extends TeamUnit {
 

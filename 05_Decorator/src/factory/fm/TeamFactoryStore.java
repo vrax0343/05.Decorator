@@ -12,7 +12,6 @@ import behavior.weapon.NoWeapon;
 import behavior.weapon.Staff;
 import behavior.weapon.Sword;
 import function.GenerateRandomPosition;
-import unit.TeamUnit;
 
 public abstract class TeamFactoryStore {
 	

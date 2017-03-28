@@ -1,6 +1,7 @@
 package factory.af;
 
 import factory.af.unit.CivilianTeamUnit;
+import factory.af.unit.KnightTeamUnit;
 import factory.af.unit.MageTeamUnit;
 import factory.af.unit.TeamUnit;
 
@@ -19,7 +20,7 @@ public class RedTeamFactory extends TeamFactoryStore {
 			teamUnit = new CivilianTeamUnit(atf);
 			teamUnit.setName("레드 시민");
 		}else if (item.equals("Knight")) {
-			teamUnit = new CivilianTeamUnit(atf);
+			teamUnit = new KnightTeamUnit(atf);
 			teamUnit.setName("레드 기사");
 		}
 

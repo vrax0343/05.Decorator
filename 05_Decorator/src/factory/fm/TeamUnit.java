@@ -1,6 +1,5 @@
-package unit;
+package factory.fm;
 
-import java.util.ArrayList;
 
 import behavior.attack.AttackBehavior;
 import behavior.movement.MovementBehavior;

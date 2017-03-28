@@ -1,7 +1,5 @@
 package factory.fm;
 
-import unit.TeamUnit;
-
 public class BlueTeamFactory extends TeamFactoryStore {
 
 	@Override

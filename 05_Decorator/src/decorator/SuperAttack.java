@@ -1,12 +1,13 @@
 package decorator;
 
-import behavior.attack.AttackBehavior;
 import decorator.function.Fight;
+import factory.af.unit.TeamUnit;
 
 public class SuperAttack extends AbilityDecorator {
-	public SuperAttack(NormalUnit unit){
-		this.normalUnit=unit;
-		description = "Im Super Attack";
+	TeamUnit teamUnit;
+	public SuperAttack(TeamUnit unit){
+		this.teamUnit=unit;
+		System.out.println(teamUnit.teamName +" "+teamUnit.getName() + "이(가) 각성 공격을 했습니다");
 	}
 
 	@Override
@@ -15,30 +16,24 @@ public class SuperAttack extends AbilityDecorator {
 		return "각성공격을 합니다";
 	}
 	
-	public void attack(){
+	public TeamUnit attack(){
 		System.out.println("각성 공격을 합니다.");
-		System.out.println("현재 체력은: "+normalUnit.health);
+		System.out.println("현재 체력은: "+teamUnit.getHealth());
 		System.out.println("-----------------------------");
-		NormalUnit nu = new Fight().fightSuperAttack(normalUnit);
+		new Fight().fightSuperAttack(teamUnit);
 		System.out.println("-----------------------------");
-		System.out.println("공격 후 체력은: "+normalUnit.health);
-//		unit.attack(unit);
-		normalUnit = nu;
-		
+		System.out.println("공격 후 체력은: "+teamUnit.getHealth());
+		return teamUnit;
 	}
 
 	@Override
-	public void move(int x, int y) {
+	public void prepare() {
 		// TODO Auto-generated method stub
 		
 	}
-//	
+	
+	public void move(int x, int y){
+		teamUnit.move(x, y);
+	}
 
-//	@Override
-//	public void move(int x, int y) {
-		// TODO Auto-generated method stub
-//		normalUnit.move();
-//		this.normalUnit = normalUnit;
-		
-//	}
 }

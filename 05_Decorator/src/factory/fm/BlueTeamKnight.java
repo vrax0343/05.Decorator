@@ -3,7 +3,6 @@ package factory.fm;
 import behavior.attack.SwingSword;
 import behavior.movement.Walk;
 import behavior.weapon.Sword;
-import unit.TeamUnit;
 
 public class BlueTeamKnight extends TeamUnit {
 

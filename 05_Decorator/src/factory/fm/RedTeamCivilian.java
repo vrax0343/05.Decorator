@@ -3,7 +3,6 @@ package factory.fm;
 import behavior.attack.Punch;
 import behavior.movement.Walk;
 import behavior.weapon.Fist;
-import unit.TeamUnit;
 
 public class RedTeamCivilian extends TeamUnit {
 

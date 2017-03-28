@@ -1,11 +1,12 @@
 package decorator.main;
 
 import decorator.*;
+import factory.af.unit.TeamUnit;
 
 public class TestDrive {
 	public static void main(String args[]) {
-		NormalUnit unit = new KnightUnit();
-		System.out.println(unit.health);
+		TeamUnit unit = new KnightUnit();
+		System.out.println(unit.getHealth());
 //		unit.attack();
 //		unit = new SuperAttack(unit);
 //		unit.attack();
@@ -14,26 +15,25 @@ public class TestDrive {
 		
 		unit = new SuperAttack(unit);
 		unit = new SuperMove(unit);
-		System.out.println(unit.health);
-		unit.attack();
-//		System.out.println(unit);
+
+		unit =unit.attack();
 		unit.move(100, 100);
 		
-		
-		NormalUnit unit2 = new KnightUnit();
-		unit2.attack();
-		unit2.move(1, 1);
-
-		NormalUnit unit3 = new KnightUnit();
-		unit3 = new SuperAttack(unit3);
-		unit3.attack();
-		unit3.move(1, 1);
-		
-		NormalUnit unit4 = new KnightUnit();
-		unit4 = new SuperMove(unit4);
-		unit4.attack();
-		unit4.move(1, 1);
-		
+//		
+//		TeamUnit unit2 = new KnightUnit();
+//		unit2.attack();
+//		unit2.move(1, 1);
+//
+//		TeamUnit unit3 = new KnightUnit();
+//		unit3 = new SuperAttack(unit3);
+//		unit3.attack();
+//		unit3.move(1, 1);
+//		
+//		TeamUnit unit4 = new KnightUnit();
+//		unit4 = new SuperMove(unit4);
+//		unit4.attack();
+//		unit4.move(1, 1);
+//		
 //		unit.attack.attack();
 //		NormalUnit unit2 = new SuperMove();
 //		

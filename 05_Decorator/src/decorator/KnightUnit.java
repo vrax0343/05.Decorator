@@ -3,20 +3,25 @@ package decorator;
 import behavior.attack.SwingSword;
 import behavior.movement.Walk;
 import behavior.weapon.Sword;
+import factory.af.unit.TeamUnit;
+import function.Move;
 
-public class KnightUnit extends NormalUnit {
+public class KnightUnit extends TeamUnit {
 	public KnightUnit() {
-		type = "Knight";
-		health = 30;
+		this.type = "Knight";
+		this.health = 30;
 		
-		attack = new SwingSword();
-		movement = new Walk();
-		weapon = new Sword();
+		this.attack = new SwingSword();
+		this.movement = new Walk();
+		this.weapon = new Sword();
 	}
-	public void attack(){ 
+	public TeamUnit attack(){ 
 		System.out.println("노말 공격");
+		return this;
 	}
-	public void move(int x, int y){
-		System.out.println("노말 이동");
+	@Override
+	public void prepare() {
+		// TODO Auto-generated method stub
+		
 	}
 }

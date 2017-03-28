@@ -25,6 +25,7 @@ public class CivilianTeamUnit extends TeamUnit {
 		teamMessage = atf.createTeamMessage();
 		teamName	= atf.createTeamName();
 	}
+
 	
 	
 }

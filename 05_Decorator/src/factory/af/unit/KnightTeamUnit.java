@@ -25,6 +25,7 @@ public class KnightTeamUnit extends TeamUnit {
 		teamMessage = atf.createTeamMessage();
 		teamName	= atf.createTeamName();
 	}
+
 	
 	
 }

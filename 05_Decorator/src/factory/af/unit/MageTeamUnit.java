@@ -25,6 +25,7 @@ public class MageTeamUnit extends TeamUnit {
 		teamMessage = atf.createTeamMessage();
 		teamName	= atf.createTeamName();
 	}
+
 	
 	
 }

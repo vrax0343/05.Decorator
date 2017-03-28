@@ -5,6 +5,7 @@ import behavior.movement.MovementBehavior;
 import behavior.weapon.WeaponBehavior;
 import decorator.function.Fight;
 import function.GenerateRandomPosition;
+import function.Move;
 
 public abstract class NormalUnit {
 	public String description = "Unknown Unit";
@@ -18,30 +19,27 @@ public abstract class NormalUnit {
 	
 	Fight fight = new Fight();
 	
-	public String getDescription() {
-		return description;
-	}
-	
-	
-
-	public AttackBehavior getAttack() {
-		return attack;
-	}
-
-	public void setAttack(AttackBehavior attack) {
-		this.attack = attack;
-	}
-
-	public MovementBehavior getMovement() {
-		return movement;
-	}
-
-	public void setMovement(MovementBehavior movement) {
-		this.movement = movement;
-	}
-	
 	public abstract void attack();
-	public abstract void move(int x, int y);
+//	public abstract void move(int x, int y);
+	
+	public void move(int x,int y){
+		new decorator.function.Move().moveOnce(this, x, y);
+	}
+	
+	public int getLocationX() {
+		return locationX;
+	}
+	public void setLocationX(int locationX) {
+		this.locationX = locationX;
+	}
+	public int getLocationY() {
+		return locationY;
+	}
+	public void setLocationY(int locationY) {
+		this.locationY = locationY;
+	}
+	
+	
 
 
 

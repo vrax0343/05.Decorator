@@ -3,7 +3,6 @@ package factory.fm;
 import behavior.attack.CastFireball;
 import behavior.movement.Teleport;
 import behavior.weapon.Staff;
-import unit.TeamUnit;
 
 public class RedTeamMage extends TeamUnit {
 

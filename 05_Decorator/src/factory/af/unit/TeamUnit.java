@@ -3,6 +3,7 @@ package factory.af.unit;
 import behavior.attack.AttackBehavior;
 import behavior.movement.MovementBehavior;
 import behavior.weapon.WeaponBehavior;
+import decorator.function.Fight;
 import factory.af.TeamInfo;
 import factory.af.TeamMessage;
 import factory.af.TeamName;
@@ -22,6 +23,7 @@ public abstract class TeamUnit {
 	public int locationX=GenerateRandomPosition.generate(), locationY=GenerateRandomPosition.generate();
 	public int health=0;
 	
+	Fight fight = new Fight();
 	
 	public abstract void prepare();
 	
@@ -45,4 +47,33 @@ public abstract class TeamUnit {
 		System.out.println(("location: ("+locationX+","+locationY+ ")"));
 		System.out.println(("health: "+health + "\n"));
 	}
+
+	public int getLocationX() {
+		return locationX;
+	}
+
+	public void setLocationX(int locationX) {
+		this.locationX = locationX;
+	}
+
+	public int getLocationY() {
+		return locationY;
+	}
+
+	public void setLocationY(int locationY) {
+		this.locationY = locationY;
+	}
+	
+	public int getHealth(){
+		return this.health;
+	}
+	public TeamUnit attack(){ 
+		return null;
+	}
+	
+	public void move(int x,int y){
+		new decorator.function.Move().moveOnce(this, x, y);
+	}
+	
+	
 }

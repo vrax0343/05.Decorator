@@ -225,6 +225,10 @@ public class Unit extends Observable{
 		return new FindUnit().findOneByType(unitList, "Owl");
 	}
 	
+	public Unit getKnight(){
+		return new FindUnit().findOneByType(unitList, "Knight");
+	}
+	
 	//setter
 	public void setWeapon(WeaponBehavior w){
 		System.out.println("[Before Weapon]: " + this.getWeaponType());
