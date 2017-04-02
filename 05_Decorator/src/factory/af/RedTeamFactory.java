@@ -3,27 +3,27 @@ package factory.af;
 import factory.af.unit.CivilianTeamUnit;
 import factory.af.unit.KnightTeamUnit;
 import factory.af.unit.MageTeamUnit;
-import factory.af.unit.TeamUnit;
+import strategy.unit.Unit;
 
 public class RedTeamFactory extends TeamFactoryStore {
 
 	@Override
-	public TeamUnit createTeamUnit(String item) {
-		TeamUnit teamUnit = null;
+	public Unit createTeamUnit(String item) {
+		// TODO Auto-generated method stub
+		Unit teamUnit = null;
 		AbstractTeamInfoFactory atf = new RedTeamInfoFactory();
 		
 		if (item.equals("Mage")) {
 			teamUnit = new MageTeamUnit(atf);
-			teamUnit.setName("레드 법사");
+			teamUnit.prepareTeamInfo();
 
 		}else if (item.equals("Civilian")) {
 			teamUnit = new CivilianTeamUnit(atf);
-			teamUnit.setName("레드 시민");
+			teamUnit.prepareTeamInfo();
 		}else if (item.equals("Knight")) {
 			teamUnit = new KnightTeamUnit(atf);
-			teamUnit.setName("레드 기사");
+			teamUnit.prepareTeamInfo();
 		}
-
 		return teamUnit;
 	}
 

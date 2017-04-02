@@ -1,22 +1,22 @@
 package factory.fm;
 
-import behavior.attack.CastFireball;
-import behavior.movement.Teleport;
-import behavior.weapon.Staff;
+import strategy.behavior.attack.*;
+import strategy.behavior.movement.*;
+import strategy.behavior.weapon.*;
+import strategy.unit.Knight;
+import strategy.unit.Mage;
+import strategy.unit.Unit;
 
-public class RedTeamMage extends TeamUnit {
+public class RedTeamMage extends Unit {
 
 	public RedTeamMage() {
 		// TODO Auto-generated constructor stub
-		type = "Mage";
-		health=20;
-		
-		attack = new CastFireball();
-		movement = new Teleport();
-		weapon = new Staff();
+		super("Mage");
+		setting(new Mage());
 	}
 	
 	public String toString(){
-		return "---- RedTeam " + type + " ----\n" + super.toString();
+		this.setType("RedTeam "+this.getType());
+		return super.toString();
 	}
 }

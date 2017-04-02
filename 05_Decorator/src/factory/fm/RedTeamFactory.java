@@ -1,12 +1,14 @@
 package factory.fm;
 
+import strategy.unit.Unit;
+
 public class RedTeamFactory extends TeamFactoryStore {
 
 	@Override
-	TeamUnit createTeamUnit(String item) {
+	Unit createTeamUnit(String item) {
 		// TODO Auto-generated method stub
 		if (item.equals("Civilian")) {
-    		return new RedTeamCivilian();
+    		return new RedTeamCitizen();
 		} else if (item.equals("Knight")) {
 		    	return new RedTeamKnight();
 		} else if (item.equals("Mage")) {

@@ -2,8 +2,9 @@ package observer;
 
 import java.util.ArrayList;
 
-import unit.Unit;
+import singleton.unit.SingletonUnit;
 
 public interface Observer {
-	public void update(ArrayList<Unit> unit, int locationX, int locationY, int range);
+	public void update();
+	public void display();
 }

@@ -1,29 +1,36 @@
 package factory.af.unit;
 
-import behavior.attack.CastFireball;
-import behavior.movement.Teleport;
-import behavior.weapon.Staff;
 import factory.af.AbstractTeamInfoFactory;
+import factory.af.TeamMessage;
+import factory.af.TeamName;
+import strategy.behavior.attack.*;
+import strategy.behavior.movement.*;
+import strategy.behavior.weapon.*;
+import strategy.unit.Mage;
+import strategy.unit.Unit;
 
 public class MageTeamUnit extends TeamUnit {
 	AbstractTeamInfoFactory atf;
-
+	public TeamMessage teamMessage;
+	public TeamName teamName;
+	
 	public MageTeamUnit(AbstractTeamInfoFactory atf) {
 		super();
 		this.atf = atf;
-		type = "Mage";
-		health=20;
 		
-		attack = new CastFireball();
-		movement = new Teleport();
-		weapon = new Staff();
+		this.setting(new Mage());
+		
 	}
 
 	@Override
-	public void prepare() {
+	public void prepareTeamInfo() {
 		// TODO Auto-generated method stub
 		teamMessage = atf.createTeamMessage();
 		teamName	= atf.createTeamName();
+	}
+	
+	public String toString(){
+		return "teamMessage: " + this.teamMessage + "\t teamName: " + this.teamName + "\n" + super.toString();  
 	}
 
 	

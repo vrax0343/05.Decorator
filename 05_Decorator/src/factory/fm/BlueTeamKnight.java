@@ -1,22 +1,21 @@
 package factory.fm;
 
-import behavior.attack.SwingSword;
-import behavior.movement.Walk;
-import behavior.weapon.Sword;
+import strategy.behavior.attack.SwingSword;
+import strategy.behavior.movement.Walk;
+import strategy.behavior.weapon.Sword;
+import strategy.unit.Knight;
+import strategy.unit.Unit;
 
-public class BlueTeamKnight extends TeamUnit {
+public class BlueTeamKnight extends Unit {
 
 	public BlueTeamKnight() {
-		// TODO Auto-generated constructor stub
-		type = "Knight";
-		health = 30;
-		
-		attack = new SwingSword();
-		movement = new Walk();
-		weapon = new Sword();
+//		// TODO Auto-generated constructor stub
+		super("Knight");
+		setting(new Knight());
 	}
 	
 	public String toString(){
-		return "---- BlueTeam " + type + " ----\n" + super.toString();
+		this.setType("BlueTeam "+this.getType());
+		return super.toString();
 	}
 }
